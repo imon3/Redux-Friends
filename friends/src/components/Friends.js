@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import FriendsList from './FriendsList';
+import FriendForm from './FriendForm';
 
 
 class Friends extends React.Component {
@@ -30,17 +31,10 @@ class Friends extends React.Component {
             <div>
                 {this.state.friends.map((friend, index) => {
                     return (
-                        <div>
-                            <FriendsList friend={friend} key={index} />
-                        </div>
+                        <FriendsList friend={friend} key={index} />
                     )
                 })}
-                <form>
-                    <input type='text' placeholder='Name' />
-                    <input type='number' placeholder='Age' />
-                    <input type='email' placeholder='Email' />
-                    <button>Submit</button>
-                </form>
+                <FriendForm />
             </div>
         )
     }
