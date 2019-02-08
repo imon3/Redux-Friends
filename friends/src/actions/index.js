@@ -6,7 +6,7 @@ export const POST_FRIEND_FAIL = 'POST_REQUEST_FAIL';
 
 export const postFriend = friend => dispatch => {
     dispatch({ type: POST_FRIEND_START })
-    axios.post('http://localhost:500/api/friend', friend)
+    axios.post('http://localhost:5000/api/friend', friend)
         .then(response => {
             dispatch({
                 type: POST_FRIEND_SUCCESS,

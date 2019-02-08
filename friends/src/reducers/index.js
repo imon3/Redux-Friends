@@ -1,8 +1,8 @@
 import { POST_FRIEND_START, POST_FRIEND_SUCCESS, POST_FRIEND_FAIL } from '../actions'
 
 const initialState = {
-    fetchingFriends: false,
-    friendsFetched: false,
+    postingFriends: false,
+    friendsPosted: false,
     friendsSaved: false,
     savingFriends: false,
     updatingFriend: false,
@@ -18,19 +18,21 @@ const reducer = (state = initialState, action) => {
         case POST_FRIEND_START:
             return {
                 ...state,
-                fetchingFriends: true,
+                postingFriends: true,
                 friends: action.payload
             }
         case POST_FRIEND_SUCCESS:
             return {
                 ...state,
-                fetchingFriends: false,
+                postingFriends: false,
+                friendsPosted: true,
                 error: ''
             }
         case POST_FRIEND_FAIL:
             return {
                 ...state,
-                fetchingFriends: false,
+                postingFriends: false,
+                friendsPosted: false,
                 error: action.payload
             }
         default:

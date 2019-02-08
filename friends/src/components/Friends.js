@@ -31,7 +31,7 @@ class Friends extends React.Component {
             <div>
                 {this.state.friends.map((friend, index) => {
                     return (
-                        <FriendsList friend={friend} key={index} />
+                        <FriendsList friend={friend} key={index} id={index} />
                     )
                 })}
                 <FriendForm />
